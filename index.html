@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sign in</title>
+    <link rel="stylesheet" type="text/css" href="atom.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <header></header>
+   <div class="content">
+        <div id="overlay_in">
+            <form class="account" action="google.fr" method="post">
+                <div id="cross" onclick="off_in()">✖️</div>
+                <input type="text" placeholder="Login" required>
+                <input type="password" placeholder="Password" required>
+                <p class="link" onclick="on_fp()">forgot password?</p>
+                <div class="logorsign">
+                or
+                <div class="button signup" style="float:right;" onclick="on_up()">Sign up</div>
+                <input type="submit" class="button login" value="Login" style="float:left;"></div>
+            </form>
+        </div>
+       <div id="overlay_up">
+            <form class="account_up" action="google.fr" method="post">
+                <div id="cross" onclick="off_up()">✖️</div>
+                <input type="text" placeholder="Login" required>
+                <input type="password" placeholder="Password" required>
+                <input type="email" placeholder="Email" required>
+                <div class="logorsign">
+                or
+                <div class="button signup" style="float:right;" onclick="on_in()">Sign in</div>
+                <input type="submit" class="button login" value="Register" style="float:left;"></div>
+            </form>
+        </div>
+         <div id="overlay_fp">
+            <form class="account_fp" action="google.fr" method="post">
+                <div id="cross" onclick="off_fp()">✖️</div>
+                <input type="email" placeholder="Email" required>
+                <input type="submit" class="button login" value="Reset my password" style="width:180px; margin-top:10px; left:50%; margin-left:-90px;">
+            </form>
+        </div>
+   <footer><p>by ysan-seb</p></footer>
+    <script>
+        function off_in() {document.getElementById("overlay_in").style.display = "none";}
+        function off_up() {document.getElementById("overlay_up").style.display = "none";}
+        function off_fp() {document.getElementById("overlay_fp").style.display = "none";}
+        function on_up() {
+            document.getElementById("overlay_in").style.display = "none";
+            document.getElementById("overlay_up").style.display = "block";
+            document.getElementById("overlay_fp").style.display = "none";
+        }
+        function on_in() {
+            document.getElementById("overlay_up").style.display = "none";
+            document.getElementById("overlay_in").style.display = "block";
+            document.getElementById("overlay_fp").style.display = "none";
+        }
+        function on_fp() {
+            document.getElementById("overlay_up").style.display = "none";
+            document.getElementById("overlay_in").style.display = "none";
+            document.getElementById("overlay_fp").style.display = "block";
+        }
+    </script>
+</body>
+</html>
